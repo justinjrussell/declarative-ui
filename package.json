@@ -1,0 +1,26 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1",
+    "tsdx": "^0.13.3"
+  },
+  "scripts": {
+    "postinstall": "npm run clean && npm run bootstrap",
+    "bootstrap": "lerna bootstrap --hoist",
+    "clean": "lerna clean --yes",
+    "build": "lerna run build",
+    "build:since": "lerna run build --since",
+    "test": "lerna run test",
+    "test:since": "lerna run test --since",
+    "link": "lerna link",
+    "lint": "lerna run lint",
+    "create": "lerna create",
+    "new": "./node_modules/.bin/tsdx create"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lerna run lint"
+    }
+  }
+}
