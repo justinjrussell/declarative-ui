@@ -1,14 +1,37 @@
-export enum TruncationMode {
-  head,
-  middle,
-  tail,
+export interface AdditiveArithmetic {
+  zero: AdditiveArithmetic;
 }
 
-export enum TextAlignment {
-  center,
-  leading,
-  trailing,
+export interface Animatable {}
+
+export type AnimatableData = {
+  animatableData: AnimatableData;
+};
+
+export interface Button extends View {
+  buttonStyle?: () => Button;
 }
+
+export interface Capsule extends View, Animatable, Shape {
+  style: RoundedCornerStyle;
+  animatableData: EmptyAnimatableData;
+}
+
+export interface Circle extends View {}
+
+export interface ColorPikcer extends View {}
+
+export interface DatePicker extends View {}
+
+export interface Divider extends View {}
+
+export interface Double {}
+
+export interface Ellipse extends View {}
+
+export interface EmptyAnimatableData
+  extends AdditiveArithmetic,
+    VectorArithmetic {}
 
 export enum Font {
   largeTitle,
@@ -32,6 +55,82 @@ export enum FontStyle {
 export enum FontWeight {
   normal,
   bold,
+}
+
+export interface ForEach extends View {}
+
+export interface Form extends View {}
+
+export interface Gauge extends View {}
+
+export interface HStack extends View {}
+
+export interface Image extends View {}
+
+export interface Int {}
+
+export type InsetShape = InsettableShape;
+
+export interface InsettableShape extends Shape {
+  strokeBorder: () => View;
+  inset: () => InsetShape;
+}
+
+export interface Label extends View {}
+
+export interface List extends View {}
+
+export interface Path extends View {}
+
+export interface Picker extends View {}
+
+export interface Rectangle extends View {}
+
+export enum RoundedCornerStyle {
+  circular,
+  continuous,
+}
+
+export interface RoundedReactangle extends View {}
+
+export interface Shape extends View, Animatable {}
+
+export interface Slider extends View {}
+
+export interface Spacer extends View {}
+
+export interface Stepper extends View {}
+
+export interface Text extends View {
+  fontWeight: () => Text;
+  bold: () => Text;
+  italic: () => Text;
+  strikethrough: () => Text;
+  kerning: () => Text;
+  underline: () => Text;
+  tracking: () => Text;
+  baselineOffset: () => Text;
+}
+
+export enum TextAlignment {
+  center,
+  leading,
+  trailing,
+}
+
+export interface Toggle extends View {}
+
+export enum TruncationMode {
+  head,
+  middle,
+  tail,
+}
+
+export interface VStack extends View {}
+
+export interface VectorArithmetic extends AdditiveArithmetic {
+  scale: () => void;
+  magnitudeSquared: Double;
 }
 
 export interface View {
@@ -76,65 +175,6 @@ export interface View {
   hidden?: () => View;
   disabled?: () => View;
 }
-
-export interface Button extends View {
-  buttonStyle?: () => View;
-}
-
-export interface Capsule extends View {}
-
-export interface Circle extends View {}
-
-export interface ColorPikcer extends View {}
-
-export interface DatePicker extends View {}
-
-export interface Divider extends View {}
-
-export interface Ellipse extends View {}
-
-export interface ForEach extends View {}
-
-export interface Form extends View {}
-
-export interface Gauge extends View {}
-
-export interface HStack extends View {}
-
-export interface Image extends View {}
-
-export interface Label extends View {}
-
-export interface List extends View {}
-
-export interface Path extends View {}
-
-export interface Picker extends View {}
-
-export interface Rectangle extends View {}
-
-export interface RoundedReactangle extends View {}
-
-export interface Slider extends View {}
-
-export interface Spacer extends View {}
-
-export interface Stepper extends View {}
-
-export interface Text extends View {
-  fontWeight: () => Text;
-  bold: () => Text;
-  italic: () => Text;
-  strikethrough: () => Text;
-  kerning: () => Text;
-  underline: () => Text;
-  tracking: () => Text;
-  baselineOffset: () => Text;
-}
-
-export interface Toggle extends View {}
-
-export interface VStack extends View {}
 
 export interface ZStack extends View {}
 
