@@ -1,13 +1,13 @@
 {
-  "name": "@declarative-ui/canvas",
-  "version": "0.0.0",
+  "name": "@declarative-ui/dom",
+  "version": "0.1.0",
   "description": "Declarative UI",
   "author": "Justin Russell <justin.j.russell@icloud.com>",
   "homepage": "https://github.com/justinjrussell/declarative-ui#readme",
   "license": "ISC",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "module": "dist/canvas.esm.js",
+  "module": "dist/dom.esm.js",
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
